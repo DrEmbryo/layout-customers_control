@@ -1,0 +1,18 @@
+<% include partials/header %>
+  <header>
+    <div class="header_wrapper">
+      <div class="top__header__center">
+        <h1>Customer Controll</h1>
+      </div>
+  </header>
+  <div class="div_container">
+    <% customers.forEach(function(customer) { %>
+      <div class="div_container_item" > Customer first name: <%= customer.first_name %><br>
+          Customer last name:<%= customer.last_name %><br>
+          Customer note:<%= customer.note %>
+                <div class="div_container_item_delete"><a href="#" class="deletecustomer" data-id="<%customer._id %>"><img src="images/X.png" width="50px" height="50px"></a></div>
+      </div>
+      <% }); %>
+  </div>
+</script>
+  <% include partials/footer %>
