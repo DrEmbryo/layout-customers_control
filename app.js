@@ -27,9 +27,8 @@ app.post('/customer/add', function(req, res) {
     if (err) {
       console.log(err);
     }
-    console.log('inserted');
+    console.log('new customer inserted');
       res.redirect('/');
-      res.render('index');
   });
 });
 
@@ -40,12 +39,14 @@ app.get('/admin', function(req, res) {
 });
 
 app.delete('/customer/delete/:id',function(req,res){
-  db.customers.remove({_id: mongojs.ObjectId(req.params.id)}, function(err,result){
+  var id = req.params.id;
+    console.log('customer with id: ' + id + ' deleted');
+  db.customers.remove({_id: ObjectId(id)}, function(err,result){
     if (err) {
 console.log(err);
     }
     res.redirect('/admin')
-  })
+  });
 });
 
 

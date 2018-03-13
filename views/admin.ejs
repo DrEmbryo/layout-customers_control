@@ -10,7 +10,7 @@
       <div class="div_container_item" > Customer first name: <%= customer.first_name %><br>
           Customer last name:<%= customer.last_name %><br>
           Customer note:<%= customer.note %>
-                <div class="div_container_item_delete"><a href="#" class="deletecustomer" data-id="<%customer._id %>"><img src="images/X.png" width="50px" height="50px"></a></div>
+                <div class="div_container_item_delete"><a href="#" class="deletecustomer" data-id="<%= customer._id %>"><img src="images/X.png" width="50px" height="50px"></a></div>
       </div>
       <% }); %>
   </div>
