@@ -32,6 +32,10 @@ app.post('/customer/add', function(req, res) {
   });
 });
 
+app.get('/login', function(req, res) {
+  res.render('login');
+});
+
 app.get('/admin', function(req, res) {
   db.customers.find(function (err, docs) {
   res.render('admin',{customers: docs});

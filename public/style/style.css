@@ -9,6 +9,8 @@ h1 {
 }
 
 .wrapper {
+  position: relative;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -94,12 +96,13 @@ h1 {
   border: none;
 }
 
-.form_imput input {
+.form_input input {
+  padding-left: 3px;
   background-color: #f2f2f2;
   border: none;
   margin-bottom: 15px;
   width: 355px;
-    border: none;
+  border: none;
 }
 
 .form textarea {
@@ -262,15 +265,26 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 60px;
 }
 
 /*------- footer ------*/
 
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #3b393a;
+}
+.footer_container{
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #3b393a;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*-------admin-side-------*/
@@ -293,4 +307,17 @@ footer {
   position: absolute;
   right: 12px;
   top: 12px;
+}
+
+/*-------login-------*/
+.log_form {
+  padding: 25px;
+  text-align: center;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.login_btn{
+  text-align: center;
+  width: 355px;
 }
