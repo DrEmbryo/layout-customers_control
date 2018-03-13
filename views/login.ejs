@@ -6,10 +6,10 @@
       </div>
   </div>
   </header>
-    <form class="log_form">
+    <form class="log_form" method="post" action="/login/check">
       <p>Enter the password</p>
-      <div class="form_input"> <input type="password" id="login" name="first_name"></div>
-      <input type="button" class="login_btn" id="login_btn" value="Login">
+      <div class="form_input"> <input type="password" name="passward"></div>
+      <input type="submit" class="login_btn" value="Login">
     </form>
 
   <% include partials/footer %>

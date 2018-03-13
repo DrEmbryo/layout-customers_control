@@ -32,6 +32,16 @@ app.post('/customer/add', function(req, res) {
   });
 });
 
+app.post('/login/check', function(req, res) {
+  var passward = req.body.passward ;
+  var key = '1111';
+  if (passward == key) {
+  res.redirect('/admin')
+  }else{
+  res.redirect('/login')
+  }
+});
+
 app.get('/login', function(req, res) {
   res.render('login');
 });
