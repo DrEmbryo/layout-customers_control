@@ -1,12 +1,15 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const body_parser = require('body-parser');
 const path = require('path');
 const mongojs = require('mongojs');
 const db = mongojs('CustomerControlApp', ['customers']);
 var ObjectId = mongojs.ObjectId;
+var key = '1111';
 const app = express();
 
 app.use(body_parser.json());
+app.use(cookieParser());
 app.use(body_parser.urlencoded({
   extended: false
 }));
@@ -34,8 +37,8 @@ app.post('/customer/add', function(req, res) {
 
 app.post('/login/check', function(req, res) {
   var passward = req.body.passward ;
-  var key = '1111';
-  if (passward == key) {
+   console.log('Cookies: ', req.cookies);
+  if (req.cookies.pass == key) {
   res.redirect('/admin')
   }else{
   res.redirect('/login')
@@ -48,7 +51,11 @@ app.get('/login', function(req, res) {
 
 app.get('/admin', function(req, res) {
   db.customers.find(function (err, docs) {
-  res.render('admin',{customers: docs});
+    if (req.cookies.pass == key) {
+    res.render('admin',{customers: docs});
+    }else{
+    res.redirect('/login')
+    }
   });
 });
 
